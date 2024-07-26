@@ -1,0 +1,94 @@
+:root {
+    /*  change this for scaling  */
+      --m: 4rem;
+      --red: #FF6565;
+      --pink: #FF64F9;
+      --purple: #6B5FFF;
+      --blue: #4D8AFF;
+      --green: #5BFF89;
+      --yellow: #FFEE55;
+      --orange: #FF6D1B;
+      
+}
+
+* {
+    padding: 10px;
+    margin: 0px;
+}
+
+.title{
+    display: flex;
+    gap: 70px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.header_title{
+text-align: center;
+}
+
+.content{
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.cajaResultado{
+    background-color: var(--red);
+    height: auto;
+    width: auto;
+}
+
+.cajaEncriptar{
+    width: 100%;
+    border-radius: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FEFBD8;
+    padding: 30px;
+    text-align: center;
+  }
+
+button {
+    border: calc(0.08 * var(--m)) solid transparent;
+    position: relative;
+    color: #F3F3F3;
+    font-family: 'Space Grotesk';
+    font-size: var(--m);
+    border-radius: calc(0.7 * var(--m));
+    padding: calc(0.5 * var(--m)) calc(1 * var(--m));
+    display: inline-block;;
+    justify-content: center;
+    cursor: pointer;
+    
+    background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+    background-origin: border-box;
+    background-clip: padding-box, border-box, border-box;
+    background-size: 200%;
+    animation: animate 3s infinite linear;
+  }
+  button::before {
+    background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+    width: 60%;
+    position: absolute;
+    bottom: -20%;
+    z-index: -5;
+    background-size: 200%;
+    animation: animate 3s;
+    filter: blur(calc(0.8 * var(--m)));
+  }
+  @keyframes animate {
+    0% {background-position: 0}
+    100% {background-position: 200%}
+  }
+  @media screen and (max-width: 1000px) {
+    :root {
+      --m: 2rem;
+    }
+  }
+  button:hover {
+    background: rgb(88, 88, 88);
+  }
