@@ -16,16 +16,16 @@
     </header>
     <main class="content">
         <div class="cajaTexto">
-            <textarea class="cajaEncriptar" rows="15" cols="90" type="text" placeholder="Ingrese el texto a Encriptar:"></textarea>
+            <textarea class="cajaEncriptar" id="contenidoTextual" rows="15" cols="90" type="text" placeholder="Ingrese el texto a Encriptar:"></textarea>
         </div>
         <div class="cajaResultado">
-           <p>a</p>
+           <p  id="resultado">a</p>
         </div>
     </main>
     <footer class="button">
       <p><b> ⚠ Solo letras minúsculas y sin acentos (Tampoco numeros y caracteres especiales).</b></p>
-        <button class="boton" onclick="encriptar">Encriptar</button>
-        <button class="boton" onclick="desencriptar">Desencriptar</button>
+        <button class="boton" onclick="encriptarTexto()">Encriptar</button>
+        <button class="boton" onclick="desencriptarTexto()">Desencriptar</button>
     </footer>
     <script src="./script.js"></script>
   </body>
