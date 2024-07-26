@@ -12,15 +12,20 @@
 }
 
 * {
-    padding: 10px;
+    padding: 0px;
     margin: 0px;
 }
 
 .title{
+    
     display: flex;
-    gap: 70px;
     font-size: 40px;
-    text-align: center;
+   
+    align-items: center;
+    width: 150px;
+     /* Hace que el logo se comporte como un bloque */
+    padding: 10px;
+    margin: 20px 10px;
 }
 
 .header_title{
@@ -48,7 +53,7 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: #FEFBD8;
-    padding: 30px;
+    padding: auto;
     text-align: center;
   }
 
@@ -57,7 +62,7 @@ button {
     position: relative;
     color: #F3F3F3;
     font-family: 'Space Grotesk';
-    font-size: var(--m);
+    font-size:  calc(0.5 * var(--m));;
     border-radius: calc(0.7 * var(--m));
     padding: calc(0.5 * var(--m)) calc(1 * var(--m));
     display: inline-block;;
