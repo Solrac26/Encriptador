@@ -81,3 +81,10 @@ function copiarTexto() {
 
 // Agrega un event listener al botón de copiar
 document.getElementById('copiarBoton').addEventListener('click', copiarTexto);
+
+function validarTexto(textarea) {
+    const regex = /^[a-z\s]*$/;
+    if (!regex.test(textarea.value)) {
+      textarea.value = textarea.value.replace(/[^a-z\s]/g, '');
+    }
+  }
