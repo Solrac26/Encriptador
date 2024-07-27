@@ -1,99 +1,132 @@
 :root {
-    /*  change this for scaling  */
-      --m: 4rem;
-      --red: #FF6565;
-      --pink: #FF64F9;
-      --purple: #6B5FFF;
-      --blue: #4D8AFF;
-      --green: #5BFF89;
-      --yellow: #FFEE55;
-      --orange: #FF6D1B;
-      
+  --m: 4rem;
+  --red: #FF6565;
+  --pink: #FF64F9;
+  --purple: #6B5FFF;
+  --blue: #4D8AFF;
+  --green: #5BFF89;
+  --yellow: #FFEE55;
+  --orange: #FF6D1B;
 }
 
 * {
-    padding: 0px;
-    margin: 0px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.title{
-    
-    display: flex;
-    font-size: 40px;
-   
-    align-items: center;
-    width: 150px;
-     /* Hace que el logo se comporte como un bloque */
-    padding: 10px;
-    margin: 20px 10px;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
 }
 
-.header_title{
-text-align: center;
+.title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 10px;
 }
 
-.content{
-    justify-content: space-between;
-    flex-direction: column;
+.header_title {
+  text-align: center;
+  flex: 1;
 }
 
-.cajaResultado{
-    background-color: var(--red);
-    height: auto;
-    width: auto;
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: flex-start;
+  min-height: calc(100vh - 100px); /* Ajusta según el tamaño del header */
 }
 
-.cajaEncriptar{
-    width: 100%;
-    border-radius: 20px;
+.seccionIzquierda {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: calc(100vh - 100px); /* Asegura que ocupe toda la altura disponible */
 }
+
+.cajaEncriptar {
+  width: 100%;
+  height: 80%;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+
+.seccionDerecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: gray;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40%;
+  min-height: calc(100vh - 100px); /* Asegura que ocupe al menos la altura disponible */
+}
+
+
+.resultado img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
 
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #FEFBD8;
-    padding: auto;
-    text-align: center;
-  }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #FEFBD8;
+  text-align: center;
+  padding: 10px;
+}
 
 button {
-    border: calc(0.08 * var(--m)) solid transparent;
-    position: relative;
-    color: #F3F3F3;
-    font-family: 'Space Grotesk';
-    font-size:  calc(0.5 * var(--m));;
-    border-radius: calc(0.7 * var(--m));
-    padding: calc(0.5 * var(--m)) calc(1 * var(--m));
-    display: inline-block;;
-    justify-content: center;
-    cursor: pointer;
-    
-    background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
-    background-origin: border-box;
-    background-clip: padding-box, border-box, border-box;
-    background-size: 200%;
-    animation: animate 3s infinite linear;
+  border: calc(0.08 * var(--m)) solid transparent;
+  position: relative;
+  color: #F3F3F3;
+  font-family: 'Space Grotesk';
+  font-size: calc(0.5 * var(--m));
+  border-radius: calc(0.7 * var(--m));
+  padding: calc(0.1 * var(--m)) calc(1 * var(--m));
+  display: inline-block;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)), linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  background-size: 200%;
+  animation: animate 3s infinite linear;
+}
+
+button::before {
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  width: 60%;
+  position: absolute;
+  bottom: -20%;
+  z-index: -5;
+  background-size: 200%;
+  animation: animate 3s;
+  filter: blur(calc(0.8 * var(--m)));
+}
+
+@keyframes animate {
+  0% { background-position: 0; }
+  100% { background-position: 200%; }
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 2rem;
   }
-  button::before {
-    background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
-    width: 60%;
-    position: absolute;
-    bottom: -20%;
-    z-index: -5;
-    background-size: 200%;
-    animation: animate 3s;
-    filter: blur(calc(0.8 * var(--m)));
-  }
-  @keyframes animate {
-    0% {background-position: 0}
-    100% {background-position: 200%}
-  }
-  @media screen and (max-width: 1000px) {
-    :root {
-      --m: 2rem;
-    }
-  }
-  button:hover {
-    background: rgb(88, 88, 88);
-  }
+}
+
+button:hover {
+  background: rgb(88, 88, 88);
+}

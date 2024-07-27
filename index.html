@@ -5,28 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenge</title>
     <link rel="stylesheet" href="style.css/style.css" />
-    <link rel="stylesheet" href="script.js" />
   </head>
   <body>
     <header class="title">
-      
-        <img src="assets\Logo.png" alt="Logo" />
-      
+      <img src="assets\Logo.png" alt="Logo" />
       <h1 class="header_title">Encripteishon</h1>
     </header>
     <main class="content">
-        <div class="cajaTexto">
-            <textarea class="cajaEncriptar" id="contenidoTextual" rows="15" cols="90" type="text" placeholder="Ingrese el texto a Encriptar:"></textarea>
+      <div class="seccionIzquierda">
+        <textarea
+          class="cajaEncriptar"
+          id="contenidoTextual"
+          type="text"
+          placeholder="ㅤIngrese el texto a Encriptar:"
+        ></textarea>
+        <div class="botonesTexto">
+          <p>
+            <b>
+              ⚠ Solo letras minúsculas y sin acentos (Tampoco números y
+              caracteres especiales).</b
+            >
+          </p>
+          <button class="boton" onclick="encriptarTexto()">Encriptar</button>
+          <button class="boton" onclick="desencriptarTexto()">
+            Desencriptar
+          </button>
         </div>
-        <div class="cajaResultado">
-           <p  id="resultado">a</p>
-        </div>
+      </div>
+      <div class="seccionDerecha">
+        <p id="resultado" style="font-size: xx-large;">
+          <img
+            src="assets\Muñeco.png"
+            style="height: 50%; width: 60%; align-items: center"
+            alt="Ilustración"
+          />
+          <br>
+          Ningún mensaje fue encontrado. Ingresa el texto que desees encriptar o
+          desencriptar.
+        </p>
+        <button id="botonFijo" class="botonFijo" onclick="copiarTexto()">
+          Copiar
+        </button>
+      </div>
     </main>
-    <footer class="button">
-      <p><b> ⚠ Solo letras minúsculas y sin acentos (Tampoco numeros y caracteres especiales).</b></p>
-        <button class="boton" onclick="encriptarTexto()">Encriptar</button>
-        <button class="boton" onclick="desencriptarTexto()">Desencriptar</button>
-    </footer>
     <script src="./script.js"></script>
   </body>
 </html>
