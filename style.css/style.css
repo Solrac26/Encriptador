@@ -57,6 +57,11 @@ body {
   background-color: #f8f8f8;
 }
 
+.botonesTexto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .seccionDerecha {
   display: flex;
@@ -70,13 +75,11 @@ body {
   min-height: calc(100vh - 100px); /* Asegura que ocupe al menos la altura disponible */
 }
 
-
 .resultado img {
   max-width: 100%;
   height: auto;
   margin-bottom: 10px;
 }
-
 
 footer {
   position: fixed;
@@ -124,6 +127,20 @@ button::before {
 @media screen and (max-width: 1000px) {
   :root {
     --m: 2rem;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .seccionIzquierda {
+    width: 100%;
+    height: auto;
+  }
+
+  .seccionDerecha {
+    width: 100%;
+    margin-top: 20px;
   }
 }
 
