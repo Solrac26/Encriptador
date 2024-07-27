@@ -4,15 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenge</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css/style.css" />
   </head>
   <body>
+    <!-- Header section -->
     <header class="title">
+      <!-- Logo image -->
       <img src="assets\Logo.png" alt="Logo" />
+      <!-- Main title of the page -->
       <h1 class="header_title">Encripteishon</h1>
     </header>
+    
+    <!-- Main content section -->
     <main class="content">
       <div class="seccionIzquierda">
+        <!-- Text area for input to encrypt -->
         <textarea
           class="cajaEncriptar"
           id="contenidoTextual"
@@ -21,19 +28,20 @@
           placeholder="ㅤIngrese el texto a Encriptar:"
         ></textarea>
         <div class="botonesTexto">
+          <!-- Instruction message -->
           <p>
             <b>
               ⚠ Solo letras minúsculas y sin acentos (Tampoco números y
-              caracteres especiales).</b
-            >
+              caracteres especiales).
+            </b>
           </p>
+          <!-- Buttons for encrypting and decrypting text -->
           <button class="boton" onclick="encriptarTexto()">Encriptar</button>
-          <button class="boton" onclick="desencriptarTexto()">
-            Desencriptar
-          </button>
+          <button class="boton" onclick="desencriptarTexto()">Desencriptar</button>
         </div>
       </div>
       <div class="seccionDerecha">
+        <!-- Placeholder text and illustration for results -->
         <p id="resultado" style="font-size: xx-large;">
           <img
             src="assets\Muñeco.png"
@@ -44,11 +52,11 @@
           Ningún mensaje fue encontrado. Ingresa el texto que desees encriptar o
           desencriptar.
         </p>
-        <button id="botonFijo" class="botonFijo" onclick="copiarTexto()">
-          Copiar
-        </button>
+        <!-- Button for copying text to clipboard -->
+        <button id="botonFijo" class="botonFijo" onclick="copiarTexto()">Copiar</button>
       </div>
     </main>
+    <!-- Link to external JavaScript file -->
     <script src="./script.js"></script>
   </body>
 </html>

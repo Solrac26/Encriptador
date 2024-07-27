@@ -1,4 +1,5 @@
 :root {
+  /* Definición de variables para colores y tamaños */
   --m: 4rem;
   --red: #FF6565;
   --pink: #FF64F9;
@@ -10,140 +11,210 @@
 }
 
 * {
+  /* Eliminación de márgenes y rellenos por defecto */
   padding: 0;
   margin: 0;
+  /* Asegura que el cálculo del tamaño de los elementos incluya bordes y rellenos */
   box-sizing: border-box;
 }
 
 body {
+  /* Fuente predeterminada para el cuerpo del documento */
   font-family: 'Arial', sans-serif;
+  /* Color de fondo del cuerpo */
   background-color: #f8f8f8;
 }
 
 .title {
+  /* Alineación del contenido del encabezado */
   display: flex;
   align-items: center;
+  /* Ancho completo del contenedor */
   width: 100%;
+  /* Espaciado interno del encabezado */
   padding: 10px;
+  /* Margen alrededor del encabezado */
   margin: 20px 10px;
 }
 
 .header_title {
+  /* Alineación centrada del texto del título */
   text-align: center;
+  /* El título ocupa el espacio restante en el flex container */
   flex: 1;
 }
 
 .content {
+  /* Alineación de los elementos del contenido principal */
   display: flex;
   justify-content: space-between;
+  /* Espaciado interno del contenido */
   padding: 20px;
+  /* Alineación de elementos hijos al inicio del contenedor */
   align-items: flex-start;
-  min-height: calc(100vh - 100px); /* Ajusta según el tamaño del header */
+  /* Altura mínima para asegurar que ocupe toda la ventana menos el tamaño del encabezado */
+  min-height: calc(100vh - 100px);
 }
 
 .seccionIzquierda {
+  /* Disposición en columna de los elementos internos */
   display: flex;
   flex-direction: column;
+  /* Ancho de la sección izquierda */
   width: 55%;
-  height: calc(100vh - 100px); /* Asegura que ocupe toda la altura disponible */
+  /* Altura para ocupar todo el espacio disponible */
+  height: calc(100vh - 100px);
 }
 
 .cajaEncriptar {
+  /* Ancho completo del textarea */
   width: 100%;
+  /* Altura del textarea */
   height: 80%;
+  /* Bordes redondeados */
   border-radius: 10px;
+  /* Bordes del textarea */
   border: 2px solid #ccc;
+  /* Espaciado interno del textarea */
   padding: 10px;
+  /* Color de fondo del textarea */
   background-color: #f8f8f8;
 }
 
 .botonesTexto {
+  /* Disposición en columna de los botones */
   display: flex;
   flex-direction: column;
+  /* Espacio entre los botones */
   gap: 10px;
 }
 
 .seccionDerecha {
+  /* Disposición en columna de los elementos internos */
   display: flex;
   flex-direction: column;
+  /* Alineación centrada de los elementos */
   align-items: center;
   text-align: center;
+  /* Color de fondo de la sección derecha */
   background-color: gray;
+  /* Espaciado interno de la sección */
   padding: 20px;
+  /* Bordes redondeados */
   border-radius: 10px;
+  /* Ancho de la sección derecha */
   width: 40%;
-  min-height: calc(100vh - 100px); /* Asegura que ocupe al menos la altura disponible */
+  /* Altura mínima para asegurar que ocupe todo el espacio disponible */
+  min-height: calc(100vh - 100px);
 }
 
 .resultado img {
+  /* Ancho máximo de la imagen */
   max-width: 100%;
+  /* Altura automática para mantener la proporción */
   height: auto;
+  /* Margen inferior de la imagen */
   margin-bottom: 10px;
 }
 
 footer {
+  /* Posición fija del pie de página */
   position: fixed;
   bottom: 0;
+  /* Ancho completo del pie de página */
   width: 100%;
+  /* Color de fondo del pie de página */
   background-color: #FEFBD8;
+  /* Alineación centrada del texto */
   text-align: center;
+  /* Espaciado interno del pie de página */
   padding: 10px;
 }
 
 button {
+  /* Bordes del botón */
   border: calc(0.08 * var(--m)) solid transparent;
+  /* Posición relativa para posicionar elementos hijos */
   position: relative;
+  /* Color del texto del botón */
   color: #F3F3F3;
+  /* Fuente del botón */
   font-family: 'Space Grotesk';
+  /* Tamaño de la fuente del botón */
   font-size: calc(0.5 * var(--m));
+  /* Bordes redondeados del botón */
   border-radius: calc(0.7 * var(--m));
+  /* Espaciado interno del botón */
   padding: calc(0.1 * var(--m)) calc(1 * var(--m));
+  /* Disposición del botón como inline-block */
   display: inline-block;
+  /* Alineación centrada del contenido */
   justify-content: center;
+  /* Cursor de puntero al pasar sobre el botón */
   cursor: pointer;
+  /* Gradiente de fondo del botón */
   background: linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)), linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  /* Origen del fondo */
   background-origin: border-box;
+  /* Recorte del fondo para incluir bordes */
   background-clip: padding-box, border-box, border-box;
+  /* Tamaño del fondo */
   background-size: 200%;
+  /* Animación del fondo */
   animation: animate 3s infinite linear;
 }
 
 button::before {
+  /* Fondo del pseudo-elemento ::before */
   background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  /* Ancho del pseudo-elemento */
   width: 60%;
+  /* Posición del pseudo-elemento */
   position: absolute;
   bottom: -20%;
+  /* Índice z para el pseudo-elemento */
   z-index: -5;
+  /* Tamaño del fondo */
   background-size: 200%;
+  /* Animación del pseudo-elemento */
   animation: animate 3s;
+  /* Efecto de desenfoque */
   filter: blur(calc(0.8 * var(--m)));
 }
 
 @keyframes animate {
+  /* Animación de desplazamiento del fondo */
   0% { background-position: 0; }
   100% { background-position: 200%; }
 }
 
 @media screen and (max-width: 1000px) {
   :root {
+    /* Reducción del tamaño de las variables en pantallas pequeñas */
     --m: 2rem;
   }
 
   .content {
+    /* Disposición en columna del contenido en pantallas pequeñas */
     flex-direction: column;
   }
 
   .seccionIzquierda {
+    /* Ancho completo de la sección izquierda en pantallas pequeñas */
     width: 100%;
+    /* Altura automática de la sección izquierda en pantallas pequeñas */
     height: auto;
   }
 
   .seccionDerecha {
+    /* Ancho completo de la sección derecha en pantallas pequeñas */
     width: 100%;
+    /* Margen superior de la sección derecha en pantallas pequeñas */
     margin-top: 20px;
   }
 }
 
 button:hover {
+  /* Cambio de color de fondo al pasar el cursor sobre el botón */
   background: rgb(88, 88, 88);
 }

@@ -49,6 +49,7 @@ function desencriptarTexto() {
 
     // Reemplazar cada clave del diccionario por su valor correspondiente
     for (let clave in desencriptacion) {
+        // Utilizar split y join para reemplazar todas las ocurrencias de la clave
         textoDesencriptado = textoDesencriptado.split(clave).join(desencriptacion[clave]);
     }
 
@@ -83,8 +84,10 @@ function copiarTexto() {
 document.getElementById('copiarBoton').addEventListener('click', copiarTexto);
 
 function validarTexto(textarea) {
+    // Expresión regular que permite solo letras minúsculas y espacios
     const regex = /^[a-z\s]*$/;
+    // Si el valor del textarea no cumple con la expresión regular, reemplazar caracteres inválidos
     if (!regex.test(textarea.value)) {
       textarea.value = textarea.value.replace(/[^a-z\s]/g, '');
     }
-  }
+}
